@@ -1,4 +1,10 @@
-{% extends "base.html" %}
+{% extends "./base.html" %}
 {% block contents %}
-    <h1>Welcome Back denis-spe</h1>
+    <header>
+        <h1>Welcome Back</h1>
+    </header>
+    <main>
+        {% from "admin/form.html" import login %}
+        {{ login("") }}
+    </main>
 {% endblock %}

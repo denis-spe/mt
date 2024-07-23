@@ -1,0 +1,23 @@
+{% macro input(label, type="text") -%}
+    <div class="admin-{{label}}-container">
+        <label for="{{label}}">{{label}}</label>
+        <input type="{{type}}" id="{{label}}" placeholder="{{caller()}}">
+    </div>
+{% endmacro -%}
+
+{% macro submit_button(value="submit") %}
+    <div class="submit-btn">
+        <input type="submit" value="{{value}}">
+    </div>
+    {{ caller() }}
+{% endmacro %}
+
+{% macro login(duration) -%}
+    <form action="{{duration}}" method="post">
+        <fieldset>
+            {% call input("username") %}username {% endcall %}
+            {% call input("password", type="password") %}password {% endcall %}
+            {% call submit_button() %}{% endcall %}
+        </fieldset>
+    </form>
+{% endmacro -%}

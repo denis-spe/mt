@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head lang="en">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        {% if title %}
+            <title>{{ title }}</title>
+        {% else %}
+            <title>Money Tracker</title>
+        {% endif %}
     </head>
     <body>
 	{% block contents %}
